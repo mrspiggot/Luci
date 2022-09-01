@@ -14,6 +14,8 @@ reports:
 dotenv: .env
 wallets:
   from_key: ${PRIVATE_KEY}
+  from_key2: ${PRIVATE_KEY2}
+  from_key3: ${PRIVATE_KEY3}
 networks:
   kovan:
     verify: True

@@ -1,4 +1,4 @@
-from brownie import Luci, accounts, QuizReward, network, config
+from brownie import Luci, accounts, network, config
 from web3 import Web3
 
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
@@ -17,7 +17,7 @@ def get_accounts():
 
 
 def deploy_token():
-    initial_supply = Web3.toWei(21_000_000, "ether")
+    initial_supply = Web3.toWei(1_000_000, "ether")
     account, account2, account3 = get_accounts()
 
     my_token = Luci.deploy(account, initial_supply, {"from": account},
@@ -28,13 +28,13 @@ def deploy_token():
 def main():
     my_token = deploy_token()
 
-    account_0, account_1, account_2 = get_accounts()
-    get_token_balance(account_0.address)
-
-    send_token(account_1, Web3.toWei(7_000_000, "ether"))
-    get_token_balance(account_0.address)
-    get_token_balance(account_1.address)
-    get_token_balance(account_2.address)
+    # account_0, account_1, account_2 = get_accounts()
+    # get_token_balance(account_0.address)
+    #
+    # send_token(account_1, Web3.toWei(7_000_000, "ether"))
+    # get_token_balance(account_0.address)
+    # get_token_balance(account_1.address)
+    # get_token_balance(account_2.address)
 
 
 
